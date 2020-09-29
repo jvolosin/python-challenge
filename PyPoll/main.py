@@ -4,6 +4,7 @@ import csv
 
 csvpath = os.path.join(r'C:\Users\jvolo\python-challenge\PyPoll\Resources\election_data.csv')
 
+
 # Set the Variables 
 total_votes = 0 
 correy_votes = 0
@@ -67,6 +68,31 @@ print(f"Winner: {key}")
 print(f"------------------")
     
 
+# Export a text file with the results
+output_file = os.path.join("python-challenge", "PyPoll", "Election_Results_Summary.txt")
+with open(output_file,"w") as file:
 
+# Write methods to print to Elections_Results_Summary 
+    file.write(f"Election Results")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Total Votes: {total_votes}")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Khan: {khan_percent:.3f}% ({khan_votes})")
+    file.write("\n")
+    file.write(f"Correy: {correy_percent:.3f}% ({correy_votes})")
+    file.write("\n")
+    file.write(f"Li: {li_percent:.3f}% ({li_votes})")
+    file.write("\n")
+    file.write(f"O'Tooley: {otooley_percent:.3f}% ({otooley_votes})")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Winner: {key}")
+    file.write("\n")
+    file.write(f"----------------------------")
 
 
